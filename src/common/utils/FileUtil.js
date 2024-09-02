@@ -1,15 +1,15 @@
-import _string from "lodash/string";
+// import _string from "lodash/string";
 
 // 對應的content type
-const fileMimeType = {
-  pdf: "application/pdf",
-  xls: "application/vnd.ms-excel",
-  xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-  ppt: "application/vnd.ms-powerpoint",
-  pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-  doc: "application/msword",
-  docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-};
+// const fileMimeType = {
+//   pdf: "application/pdf",
+//   xls: "application/vnd.ms-excel",
+//   xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+//   ppt: "application/vnd.ms-powerpoint",
+//   pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+//   doc: "application/msword",
+//   docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+// };
 
 export default {
   downloadFile(res) {

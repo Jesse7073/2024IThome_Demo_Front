@@ -10,10 +10,15 @@ export default {
     },
     mounted() {},
     methods: {
-        async downloadStudentDepartmentExcel() {
-            let result = await JasperReportApi.getStudentDataReport();
-            FileUtil.downloadFile(result);
-        }
+      async downloadStudentDepartmentExcel() {
+          let result = await JasperReportApi.getStudentDataReport();
+          FileUtil.downloadFile(result);
+      },
+
+      async downloadStudentCourseScoreDataReportExcel() {
+        let result = await JasperReportApi.getStudentCourseScoreDataReport();
+        FileUtil.downloadFile(result);
+      }
     },
 };
   

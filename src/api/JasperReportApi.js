@@ -6,4 +6,9 @@ export default {
         const result = httpBlob.get(`/jasper/studentDataReport`);
         return result;
     },
+
+    async getStudentCourseScoreDataReport() {
+        const result = httpBlob.get(`/jasper/studentCourseScoreDataReport`);
+        return result;
+    },
 }
