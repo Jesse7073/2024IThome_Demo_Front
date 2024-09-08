@@ -18,7 +18,12 @@ export default {
       async downloadStudentCourseScoreDataReportExcel() {
         let result = await JasperReportApi.getStudentCourseScoreDataReport();
         FileUtil.downloadFile(result);
-      }
+      },
+
+      async downloadStudentAndDepartmentDataMarkReport() {
+        let result = await JasperReportApi.getStudentAndDepartmentDataMarkReport();
+        FileUtil.downloadFile(result);
+      },
     },
 };
   
