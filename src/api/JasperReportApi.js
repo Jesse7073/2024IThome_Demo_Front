@@ -16,4 +16,9 @@ export default {
         const result = httpBlob.get(`/jasper/studentAndDepartmentDataMarkReport`);
         return result;
     },
+
+    async getStudentAndDepartmentDataPieChartReport() {
+        const result = httpBlob.get(`/jasper/studentAndDepartmentDataPieChartReport`);
+        return result;
+    },
 }

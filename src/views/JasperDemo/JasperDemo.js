@@ -24,6 +24,11 @@ export default {
         let result = await JasperReportApi.getStudentAndDepartmentDataMarkReport();
         FileUtil.downloadFile(result);
       },
+
+      async downloadStudentAndDepartmentDataPieChartReport() {
+        let result = await JasperReportApi.getStudentAndDepartmentDataPieChartReport();
+        FileUtil.downloadFile(result);
+      },
     },
 };
   
