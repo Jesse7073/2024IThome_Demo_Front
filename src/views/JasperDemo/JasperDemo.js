@@ -1,11 +1,12 @@
 import JasperReportApi from "@/api/JasperReportApi";
+import JFreeChartApi from "@/api/JFreeChartApi";
 import FileUtil from "@/common/utils/FileUtil";
 
 export default {
     components: {},
     data() {
       return {
-        message: "Jasper Report報表Demo"
+        message: "報表Demo"
       };
     },
     mounted() {},
@@ -28,6 +29,11 @@ export default {
       async downloadStudentAndDepartmentDataPieChartReport() {
         let result = await JasperReportApi.getStudentAndDepartmentDataPieChartReport();
         FileUtil.downloadFile(result);
+      },
+
+      // jFreeChart
+      async downloadBarChartImage() {
+        await JFreeChartApi.getBarChartImage();
       },
     },
 };
