@@ -12,6 +12,9 @@
             <button @click="downloadStudentCourseScoreDataReportExcel">下載學生與課堂成績資料表</button>
         </div>
         <div>
+            <button @click="downloadDepartmentCourseScoreAverageDataReport">學生科系考試平均成績excel報表(子報表)</button>
+        </div>
+        <div>
             <button @click="downloadStudentAndDepartmentDataPieChartReport">下載學生與課堂成績資料表pdf(圓餅圖)</button>
         </div>
 

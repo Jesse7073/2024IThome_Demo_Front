@@ -17,6 +17,11 @@ export default {
         return result;
     },
 
+    async getDepartmentCourseScoreAverageDataReport() {
+        const result = httpBlob.get(`/jasper/departmentCourseScoreAverageDataReport`);
+        return result;
+    },
+
     async getStudentAndDepartmentDataPieChartReport() {
         const result = httpBlob.get(`/jasper/studentAndDepartmentDataPieChartReport`);
         return result;

@@ -31,6 +31,11 @@ export default {
         FileUtil.downloadFile(result);
       },
 
+      async downloadDepartmentCourseScoreAverageDataReport() {
+        let result = await JasperReportApi.getDepartmentCourseScoreAverageDataReport();
+        FileUtil.downloadFile(result);
+      },
+
       // jFreeChart
       async downloadBarChartImage() {
         await JFreeChartApi.getBarChartImage();
