@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 
-const http = axios.create({
+const httpClient = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL,
   timeout: 30 * 60 * 1000,
   headers: {
@@ -18,7 +18,7 @@ const http = axios.create({
   },
 });
 
-  http.interceptors.response.use(
+  httpClient.interceptors.response.use(
     async (response) => {  
       return response;
     },
@@ -33,5 +33,5 @@ const http = axios.create({
     }
   );
   
-  export default http;
+  export default httpClient;
   

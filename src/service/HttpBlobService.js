@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const httpBlob = axios.create({
+const blobHttpClient = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL,
   timeout: 3 * 60 * 1000,
   headers: {
@@ -11,7 +11,7 @@ const httpBlob = axios.create({
   responseType: "arraybuffer",
 });
 
-httpBlob.interceptors.response.use(
+blobHttpClient.interceptors.response.use(
   async (response) => {
     return response;
   },
@@ -26,4 +26,4 @@ httpBlob.interceptors.response.use(
   }
 );
 
-export default httpBlob;
+export default blobHttpClient;

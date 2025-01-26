@@ -1,8 +1,8 @@
-import http from "@/service/HttpService";
+import httpClient from "@/service/HttpService";
 
 export default {
     async getBarChartImage() {
-        const result = http.get(`/chart/barChartImageDemo`);
+        const result = httpClient.get(`/chart/barChartImageDemo`);
         return result;
     },
 }

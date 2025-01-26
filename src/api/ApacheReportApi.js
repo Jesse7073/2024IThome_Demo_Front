@@ -1,8 +1,8 @@
-import httpBlob from "@/service/HttpBlobService";
+import blobHttpClient from "@/service/HttpBlobService";
 
 export default {
     async getDemoExcel() {
-        const result = httpBlob.get(`/poi/demoExcel`);
+        const result = blobHttpClient.get(`/poi/demoExcel`);
         return result;
     },
 }
