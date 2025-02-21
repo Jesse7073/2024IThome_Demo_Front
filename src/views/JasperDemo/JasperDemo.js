@@ -1,6 +1,4 @@
 import JasperReportApi from "@/api/JasperReportApi";
-import JFreeChartApi from "@/api/JFreeChartApi";
-import ApacheReportApi from "@/api/ApacheReportApi";
 import FileUtil from "@/common/utils/FileUtil";
 import DatePicker from 'vue-datepicker';
 
@@ -10,7 +8,52 @@ export default {
     },
     data() {
       return {
-        message: "報表Demo",
+        tableData: [
+          { 
+            reportName: '學生科系資料表', 
+            downloadMethod: this.downloadStudentDepartmentExcel
+          },
+          { 
+            reportName: '學生科系資料表pdf(浮水印)', 
+            downloadMethod: this.downloadStudentAndDepartmentDataMarkReport 
+          },
+          { 
+            reportName: '學生與課堂成績資料表', 
+            downloadMethod: this.downloadStudentCourseScoreDataReportExcel 
+          },
+          { 
+            reportName: '學生科系考試平均成績excel報表(子報表)', 
+            downloadMethod: this.downloadDepartmentCourseScoreAverageDataReport
+          },
+          { 
+            reportName: '學生與課堂成績資料表pdf(圓餅圖)', 
+            downloadMethod: this.downloadStudentAndDepartmentDataPieChartReport 
+          },
+          { 
+            reportName: '購買烤肉用品統計表demo excel', 
+            downloadMethod: this.downloadBBQSuppliesDemoExcel 
+          },
+          { 
+            reportName: '學生科系資料表pdf(浮水印 + group)', 
+            downloadMethod: this.downloadStudentAndDepartmentGroupDataReport 
+          },
+          { 
+            reportName: '學生成績資料表(變數：成績最高的)', 
+            downloadMethod: this.downloadStudentCourseScoreDataVariableReport 
+          },
+          { 
+            reportName: '報價單', 
+            downloadMethod: this.downloadQuotation 
+          },
+          { 
+            reportName: '支出證明單', 
+            downloadMethod: this.downloadExpenses 
+          },
+          { 
+            reportName: '開源軟體簡介(自動適應內容高度)', 
+            downloadMethod: this.downloadIntroductionReport 
+          }
+        ],
         startDate: {},
         endDate: {},
       };
@@ -63,6 +106,7 @@ export default {
           startDate: this.startDate.time,
           endDate: this.endDate.time
         };
+        console.log(dateRangeVo)
         let result = await JasperReportApi.getStudentTestDataByDate(dateRangeVo);
         FileUtil.downloadFile(result);
       },
@@ -80,17 +124,6 @@ export default {
       async downloadIntroductionReport() {
         let result = await JasperReportApi.getIntroductionReport();
         FileUtil.downloadFile(result);
-      },
-
-      // Apache poi
-      async downloadDemoExcel() {
-        let result = await ApacheReportApi.getDemoExcel();
-        FileUtil.downloadFile(result);
-      },
-
-      // jFreeChart
-      async downloadBarChartImage() {
-        await JFreeChartApi.getBarChartImage();
       },
     },
 };
