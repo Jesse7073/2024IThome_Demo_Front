@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/jasperDemo">JasperReportDemo</router-link>
-    </nav>
-    <router-view/>
+    <ContainerView/>
+    <el-row type="flex" class="row-bg" justify="center">
+      <el-col :span="8"><router-view/></el-col>
+    </el-row>
   </div>
 </template>
+
+<script>
+import ContainerView from '@/components/ContainerView.vue'
+
+export default {
+  components: {
+    ContainerView
+  }
+}
+</script>
 
 <style>
 #app {
@@ -18,16 +26,13 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafc;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.row-bg {
+  padding: 10px 0;
 }
 </style>

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import JasperDemoView from '../views/JasperDemo/JasperDemo.vue'
+import ApacheDemoView from '@/views/ApacheDemo/ApacheDemo.vue'
+import JFreeChartDemoView from '@/views/JFreeChartDemo/JFreeChartDemo.vue'
 import AboutView from '../views/AboutView.vue'
 
 Vue.use(VueRouter)
@@ -9,8 +10,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/jasperDemo'
   },
   {
     path: '/about',
@@ -22,9 +22,21 @@ const routes = [
     name: 'jasperDemo',
     component: JasperDemoView
   },
+  {
+    path: '/apacheDemo',
+    name: 'apacheDemo',
+    component: ApacheDemoView
+  },
+  {
+    path: '/jFreeChartDemo',
+    name: 'jFreeChartDemo',
+    component: JFreeChartDemoView
+  },
 ]
 
 const router = new VueRouter({
+  // history 模式，移除 #
+  mode: 'history',
   routes
 })
 
